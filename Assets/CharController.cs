@@ -5,7 +5,7 @@ using System;
 
 public class CharController : MonoBehaviour {
 	[SerializeField]
-	float moveSpeed = 4f;
+	float moveSpeed = 6f;
 	Vector3 forward, right;
     bool needToCheckMovement;
     public GameObject[] groundObjects;
@@ -57,13 +57,15 @@ public class CharController : MonoBehaviour {
 		double distance;
 		double bestDistance = distanceCalc(this.gameObject, groundObjects[0]);
 		GameObject closest = groundObjects[0];
-
-		for (int i = 1; i < groundObjects.Length; i++) {
-			distance = distanceCalc (this.gameObject, groundObjects [i]);
-			if (distance < bestDistance) {
-				bestDistance = distance;
-				closest = groundObjects [i];
-			}
+        CapsuleCollider playerCollider = this.gameObject.GetComponent<CapsuleCollider>();
+        for (int i = 1; i < groundObjects.Length; i++) {
+            //if (playerCollider.IsTouching(groundObjects[i].GetComponent<Collider2D>())) {
+            distance = distanceCalc(this.gameObject, groundObjects[i]);
+            if (distance < bestDistance)
+            {
+                bestDistance = distance;
+                closest = groundObjects[i];
+            }
 		}
 		return closest;
 	}
