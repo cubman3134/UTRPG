@@ -15,6 +15,7 @@ public class CharController : MonoBehaviour
     {
         needToCheckMovement = false;
         forward = Camera.main.transform.forward;
+        
         forward.y = 0;
         forward = Vector3.Normalize(forward);
         right = Quaternion.Euler(new Vector3(0, 90, 0)) * forward;
@@ -24,6 +25,7 @@ public class CharController : MonoBehaviour
     {
         if (Input.anyKey)
         {
+            GameObject closest = findClosestGroundObject();
             Move();
             needToCheckMovement = true;
         }
@@ -38,9 +40,18 @@ public class CharController : MonoBehaviour
 
     void Move()
     {
-        Vector3 direction = new Vector3(Input.GetAxis("HorizontalKey"), 0, Input.GetAxis("VerticalKey"));
-        Vector3 rightMovement = right * moveSpeed * Time.deltaTime * Input.GetAxis("HorizontalKey");
-        Vector3 upMovement = forward * moveSpeed * Time.deltaTime * Input.GetAxis("VerticalKey");
+        //Vector3 direction;
+        Vector3 rightMovement;
+        Vector3 upMovement;
+        if (!Camera.main.GetComponent<CameraFollow>().flip)
+        {
+            rightMovement = right * moveSpeed * Time.deltaTime * Input.GetAxis("HorizontalKey") * Camera.main.GetComponent<CameraFollow>().horiz;
+            upMovement = forward * moveSpeed * Time.deltaTime * Input.GetAxis("VerticalKey") * Camera.main.GetComponent<CameraFollow>().vert;
+        } else
+        {
+            rightMovement = forward * moveSpeed * Time.deltaTime * Input.GetAxis("HorizontalKey") * Camera.main.GetComponent<CameraFollow>().horiz;
+            upMovement = right * moveSpeed * Time.deltaTime * Input.GetAxis("VerticalKey") * Camera.main.GetComponent<CameraFollow>().vert;
+        }
 
         Vector3 heading = Vector3.Normalize(rightMovement + upMovement);
 
@@ -87,13 +98,10 @@ public class CharController : MonoBehaviour
         float targetRad = target.transform.position.z / 2;
         Renderer playerRend = this.gameObject.GetComponent<Renderer>();
         Renderer targetRend = target.GetComponent<Renderer>();
-        //Vector3 desiredPosition = new Vector3(target.transform.position.x, this.gameObject.transform.position.y, target.transform.position.z);'
         Vector3 desiredPosition = new Vector3(targetRend.bounds.center.x, this.gameObject.transform.position.y, targetRend.bounds.center.z);
         while (Input.anyKey == false && this.gameObject.transform.position != desiredPosition)
         {
             this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, desiredPosition, moveSpeed * Time.deltaTime);
-            //rend1.bounds.center = Vector3.MoveTowards(rend1.bounds.center, rend2.bounds.center, moveSpeed * Time.deltaTime);
-            //this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, new Vector3(0,this.gameObject.transform.position.y ,target.transform.position.z), moveSpeed * Time.deltaTime);
         }
     }
 }

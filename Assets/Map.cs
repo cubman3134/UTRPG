@@ -86,4 +86,13 @@ public class Map : MonoBehaviour
     {
 
     }
+    //doesn't currently work correctly
+    public void DestroyMap()
+    {
+        for(int i = map.Count - 1; i >= 0; i--)
+        {
+            GameObject g = map[i];
+            Destroy(g);
+        }
+    }
 }

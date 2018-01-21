@@ -7,9 +7,11 @@ public class CameraFollow : MonoBehaviour
 
     public Transform target;
     public float testFloat = 4f;
-    public float testD1 = 0;
     public float testD2 = 0;
-    public float testD3 = 0;
+    
+    public float horiz = 1;
+    public float vert = 1;
+    public bool flip = false;
 
     Camera mycam;
     // Use this for initialization
@@ -20,6 +22,7 @@ public class CameraFollow : MonoBehaviour
     bool canRotate = true;
     float rotateAxis = 0;
     int curRotate;
+    int curState = 0;
     // Update is called once per frame
     void Update()
     {
@@ -27,15 +30,40 @@ public class CameraFollow : MonoBehaviour
         if (target)
         {
 
-            transform.position = Vector3.Lerp(transform.position, target.position, 0.1f) + new Vector3(testD1, testD2, testD3);
+            transform.position = Vector3.Lerp(transform.position, target.position, 0.1f) + new Vector3(0, testD2, 0);
             if (canRotate && Input.GetButton("RotateCam"))
             {
                 rotateAxis = Input.GetAxis("RotateCam");
                 canRotate = false;
                 curRotate = 0;
-            }
-            if (!canRotate)
+            } else if (!canRotate)
             {
+                if(curRotate == 0)
+                {
+                    curState+=(int)rotateAxis * -1;
+                    if (curState == -1) curState = 3;
+                    if (curState % 4 == 0)
+                    {
+                        flip = false;
+                        horiz = 1;
+                        vert = 1;
+                    } else if(curState % 4 == 1)
+                    {
+                        flip = true;
+                        horiz = 1;
+                        vert = -1;
+                    } else if(curState % 4 == 2)
+                    {
+                        flip = false;
+                        horiz = -1;
+                        vert = -1;
+                    } else
+                    {
+                        flip = true;
+                        horiz = -1;
+                        vert = 1;
+                    }
+                }
                 transform.eulerAngles += new Vector3(0, rotateAxis * 3, 0);
                 curRotate += 3;
                 if (curRotate == 90)
