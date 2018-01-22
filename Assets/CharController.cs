@@ -23,7 +23,7 @@ public class CharController : MonoBehaviour
         //GameObject g = other.gameObject;
         //touchingObjects[g.transform.position] = g;
         touchingObjects[other.gameObject.transform.position] = other.gameObject;
-        Debug.Log(touchingObjects.Count);
+        //Debug.Log(touchingObjects.Count);
         //Debug.Log(other.gameObject.gameObject.transform.position.x + " " + other.gameObject.gameObject.transform.position.y + " " + other.gameObject.gameObject.transform.position.z);
 
     }
