@@ -1,4 +1,10 @@
-# Introduction
+# UTRPG
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Team UTPRG
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Team Members: Jacob Mclemore, Dylan Rainwater, Parker Holt, Jinxiao Yu
+
+---
+
+## Introduction
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our project will be a video game that employs a strategic turn-based battle system. The battle system will take the player’s characteristics into account as well as the opponent’s. The opponent’s characteristics will be randomly generated, but normalized to be similar to that of the player’s. The The player’s characteristics will start randomly, but the player will be able to give weight towards specific characteristics that he or she deems to be most important. The player’s characteristics will also “level up” over time in order to give the player a sense of earned progression. The opponent’s moves will be determined by an artificial intelligence system, and the player’s will be selected from a list of predetermined actions. The video game will be two dimensional while inside of a battle sequence, but when the player is exploring the world, the graphics will be isomorphic, meaning they will be three dimensional, but at an angle. The overworld and its characters that the player can explore and interact with will be themed around the University of Tennessee, Knoxville.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The motivation of our project is for each of the team members to get more experience with building a full project from start to finish and with creating video games. We all seem to agree that creating different types of software will help to hone our programming skills, especially a video game which is usually not the type of project assigned in undergraduate academia. We are also excited at the opportunity to create software that people may get enjoyment out of using.
@@ -7,7 +13,7 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our team members have a somewhat diverse background. Our group is made up of four computer science majors: Parker Holt, Jacob McLemore, Dylan Rainwater, and Jinxiao Yu. Parker Holt has experience with unity and basic C++ game development which will be valuable to this project because the project focuses on game development, specifically unity. Jacob McLemore has experience developing numerous small personal software projects and has also worked on a few medium scale open source software projects which lends itself well to the planning required to successfully pull off a project like this. Dylan Rainwater has experience with video game development on various platforms which will be valuable to this project because he is at least somewhat familiar with the development process of video games, even though his experience is with smaller projects utilizing different technologies. Jinxiao Yu has experience with racing game development on unity which will be valuable to this project because of the experience with unity would be easy to hand on the project in a familiar environment and develop racing game could gain knowledge about unity physical engine, so this will help to develop character moving and attacking action. Our collection of varied experiences makes us a good team to collaborate on this specific project.
 
-# Customer Need
+## Customer Need
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The strategy role-playing game has been a novel classic in the gaming industry for many years. However, during all this time there hasn’t been much differentiation between titles during all these years. These games, even now, are highly coveted, but we feel with switching up the formula, there would come a much higher demand.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our games’ main target audience would be people of the already prevalent community of SRPG players, as well as newcomers, who merely enjoy playing video games. Our game deviates from the formula of the old-school style SRPG, but not to the point that that an old-timer wouldn’t understand exactly what’s going on. It has been shown that more western gamers are delving into more Japanese-style games, and we hope to appeal to those who are looking to make the plunge, and can help serve as a good crossover for people who are interested.
@@ -20,7 +26,7 @@ While we are sticking to the 2D isometric formula, we are using 3D game models t
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Due to our time constraint, story will not play a big factor in our game, however, this idea is becoming more and more prevalent in the industry. We think that our newfound systems should take the foremost focus of our game, as well, so this is not a big concern.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Another big aspect of our game, is the focus on randomness, such as random encounters and a randomized map. This is a crossover that we would like to take from other games that have been proven successes that has not made the move to SRPGs yet. Whereas many SRPGs are currently linear story-driven type games, with our low focus on story, we are able to try to bring elements, such as our randomized maps to this genre. Similar industries, such as the dungeon crawler, with Diablo 3 and Path of Exile, have tried this with much success and we hope to find that same success in our game.
-# Proposed Solution
+## Proposed Solution
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Unity, many things are already done for us, such as simple physics and setting up collisions. Many of the basic properties of a game are right at our fingertips, however, some of the more advanced systems will take many scripts and systems to complete. We plan on using the C# language as our scripting medium, as it has much in common with a language that we all know well, C++.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Some of the systems we plan to implement would be a movement system, combat, dialogue, and character statistics. Outside of this, we will determine at a future date our progress and continue with new systems if we have time. Within the movement system, we plan to be able to move with either the keyboard or mouse, allowing the user to play in both popular fashions. There will also be camera rotation, which is an interesting choice for a SRPG, considering the game is isometric. The camera will rotate in a 90 degree fashion to preserve the perfect desired angles.
@@ -34,7 +40,7 @@ The dialogue system will be simple, but have various choices, such as saying “
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;There will always be more sprints for our game, whether it be adding advanced shops, a looting/inventory system, talent points, or a class system, there is just so much to do with this type of game. It is really up to us to pour ourselves into it and make it the best that we can.
 
-# Technology Used
+## Technology Used
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our project will be built to run on Windows, Linux, and MacOS/OSX desktop systems. This will make sure that our final product will be able to reach the largest possible audience. Luckily we can avoid most of the overhead that’s usually involved with creating cross-platform code by using a professional game engine.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unity is our game engine of choice. Unity is a popular game engine that allows developers to create games using both its built-in visual editor and the C# programming language. Unity can generate code and executables for all major operating systems including our target platforms of Windows, Linux, and MacOS/OSX. The use of Unity also helps streamline some aspects of the game-development process including user interface design and asset creation.
